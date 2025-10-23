@@ -1,8 +1,8 @@
 # How to show font icons for checked and unchecked states for GridCheckBoxColumn in WinUI DataGrid?
 
-In [WinUI DataGrid](https://www.syncfusion.com/winui-controls/datagrid) (SfDataGrid), the default [GridCheckBoxColumn](https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.DataGrid.GridCheckBoxColumn.html) can be replaced with a **FontIcon** by implementing a custom cell renderer (GridCellCustomCheckBoxRenderer). The OnInitializeEditElement method sets the font icon with a helper method (UpdateIcon) selecting a tick or cross glyph and applying green or red foreground colors based on the bounded underlying property value.
+In [WinUI DataGrid](https://www.syncfusion.com/winui-controls/datagrid) (SfDataGrid), the default [GridCheckBoxColumn](https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.DataGrid.GridCheckBoxColumn.html) states can be replaced with a **FontIcon** by implementing a custom cell renderer (GridCellCustomCheckBoxRenderer). The OnInitializeEditElement method sets the font icon with a helper method (UpdateIcon) selecting a tick or cross glyph and applying green or red foreground colors based on the bounded underlying property value.
 
-The FontIcon’s  **Tapped** event is used in OnEditElementLoaded to toggle the status value at runtime and immediately update the icon. To prevent event leaks, the handler is detached in both OnEditElementUnloaded and OnUnwireEditUIElement.
+The FontIcon’s **Tapped** event is used in OnEditElementLoaded method to toggle the status value at runtime and immediately update the icon. To prevent event leaks, the handler is detached in both OnEditElementUnloaded and OnUnwireEditUIElement methods.
 
  
  ```csharp
