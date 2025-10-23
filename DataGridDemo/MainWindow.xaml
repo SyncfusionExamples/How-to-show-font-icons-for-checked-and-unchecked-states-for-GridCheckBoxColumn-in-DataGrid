@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="DataGridSample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGridSample"
+    xmlns:dataGrid="using:Syncfusion.UI.Xaml.DataGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="FontIconDemo">
+
+    <Grid>
+        <Grid.DataContext>
+            <local:ViewModel/>
+        </Grid.DataContext>
+
+        <dataGrid:SfDataGrid x:Name="dataGrid" 
+                             Margin="4"
+                             AutoGenerateColumns="False"
+                             AllowEditing="True"
+                             ItemsSource="{Binding Orders}" >
+            <dataGrid:SfDataGrid.Columns>
+                <dataGrid:GridNumericColumn HeaderText="Order ID" MappingName="OrderID" />
+                <dataGrid:GridTextColumn HeaderText="Customer Name" MappingName="CustomerName" Width="150"/>
+                <dataGrid:GridCheckBoxColumn HeaderText="Status" MappingName="Status"/>
+            </dataGrid:SfDataGrid.Columns>
+        </dataGrid:SfDataGrid>
+
+    </Grid>
+</Window>
