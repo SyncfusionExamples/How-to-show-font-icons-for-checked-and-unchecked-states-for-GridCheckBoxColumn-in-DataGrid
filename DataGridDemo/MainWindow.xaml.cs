@@ -64,6 +64,7 @@ namespace DataGridSample
                 UpdateIcon(icon, item.Status);
             }
         }
+
         protected override void OnEditElementUnloaded(object sender, RoutedEventArgs e)
         {
             var uiElement = sender as FontIcon;
@@ -77,6 +78,7 @@ namespace DataGridSample
             if (uiElement != null)
                 uiElement.Tapped -= OnTapped;
         }
+
         private void UpdateIcon(FontIcon icon, bool isChecked)
         {
             if (isChecked)
@@ -100,6 +102,4 @@ namespace DataGridSample
 
         }
     }
-
-
 }

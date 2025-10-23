@@ -4,7 +4,6 @@ In [WinUI DataGrid](https://www.syncfusion.com/winui-controls/datagrid) (SfDataG
 
 The FontIcon’s **Tapped** event is used in OnEditElementLoaded method to toggle the status value at runtime and immediately update the icon. To prevent event leaks, the handler is detached in both OnEditElementUnloaded and OnUnwireEditUIElement methods.
 
- 
  ```csharp
  
 // Remove the existing Renderer
@@ -62,6 +61,7 @@ public class GridCellCheckBoxRendererExt : GridCellCustomCheckBoxRenderer
              icon.Foreground = new SolidColorBrush(Colors.Red);
          }
      }
+
      protected override void OnEditElementUnloaded(object sender, RoutedEventArgs e)
      {
             var uiElement = sender as FontIcon;
@@ -78,6 +78,6 @@ public class GridCellCheckBoxRendererExt : GridCellCustomCheckBoxRenderer
  } 
  ```
 
- ![Fonticon for checkbox states](FontIconForCheckBoxStates.png)
+![Fonticon for checkbox states](FontIconForCheckBoxStates.png)
 
 Take a moment to peruse the [WinUI DataGrid - custom renderer ](https://help.syncfusion.com/winui/datagrid/column-types#creating-renderer) documentation, to learn more about custom renderer with examples.
